@@ -88,10 +88,10 @@ void quickSort(vector<double>& columns, const int& low, const int& high, const i
 }
 
 int main() {
-    int number_of_rows = get_number_of_lines("/Users/mokazemi-93/Downloads/crossing36(1).dat");
+    int number_of_rows = get_number_of_lines("/Users/bushra/Downloads/crossing36(1).dat");
     vector<double> cols(5 * number_of_rows);
-    initialize_col(cols, "/Users/mokazemi-93/Downloads/crossing36(1).dat", number_of_rows);
-    FILE *fptr = fopen("/Users/mokazemi-93/Downloads/output.dat", "w");
+    initialize_col(cols, "/Users/bushra/Downloads/crossing36(1).dat", number_of_rows);
+    FILE *fptr = fopen("/Users/bushra/Downloads/output.dat", "w");
     double max_fifth_col = 0.;
     double min_fifth_col = 999999.9;
     vector<double> chunk;
@@ -134,7 +134,7 @@ int main() {
 void function_(int number_of_rows) {
     FILE *fptr;
     vector<double> cols(5 * number_of_rows);
-    initialize_col(cols, "/Users/mokazemi-93/Downloads/output.dat", number_of_rows);
+    initialize_col(cols, "/Users/bushra/Downloads/output.dat", number_of_rows);
 
     cout << "going for quickSort" <<  endl;
 
@@ -143,7 +143,7 @@ void function_(int number_of_rows) {
     quickSort(v, 0, 0, 1);
 
 
-    fptr = fopen("/Users/mokazemi-93/Downloads/output_2.dat", "w");
+    fptr = fopen("/Users/bushra/Downloads/output_2.dat", "w");
     for(int i = 0; i < number_of_rows; i++){
         fprintf(fptr, "%lf %lf %lf %lf %lf\n", cols[i], cols[number_of_rows + i], cols[(number_of_rows << 1) + i], cols[3 * number_of_rows + i], cols[(number_of_rows << 2) + i]);
         printf("%lf %lf %lf %lf %lf\n", cols[i], cols[number_of_rows + i], cols[(number_of_rows << 1) + i], cols[3 * number_of_rows + i], cols[(number_of_rows << 2) + i]);
